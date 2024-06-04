@@ -81,7 +81,7 @@
             </button>
           </form>
           <!-- Registration Form -->
-          <vee-form v-show="tab === 'register'" :validation-schema="schema">
+          <vee-form v-show="tab === 'register'" :validation-schema="schema" @submit="register">
             <!-- Name -->
             <div class="mb-3">
               <label class="inline-block mb-2">Name</label>
@@ -146,13 +146,20 @@
                 <option value="USA">USA</option>
                 <option value="Mexico">Mexico</option>
                 <option value="Germany">Germany</option>
+                <option value="Antarctica">Antarctica</option>
               </vee-field>
               <ErrorMessage class="text-red-600" name="country" />
             </div>
             <!-- TOS -->
             <div class="mb-3 pl-6">
-              <input type="checkbox" class="w-4 h-4 float-left -ml-6 mt-1 rounded" />
+              <vee-field
+                type="checkbox"
+                name="tos"
+                value="1"
+                class="w-4 h-4 float-left -ml-6 mt-1 rounded"
+              />
               <label class="inline-block">Accept terms of service</label>
+              <ErrorMessage class="text-red-600" name="tos" />
             </div>
             <button
               type="submit"
@@ -182,8 +189,8 @@ export default {
         age: 'required|min_value:18|max_value:100',
         password: 'required|min:5|max:100',
         confirm_password: 'confirmed:@password',
-        country: 'required|',
-        tos: ''
+        country: 'required|excluded:Antarctica',
+        tos: 'required'
       }
     }
   },
@@ -192,6 +199,11 @@ export default {
     ...mapWritableState(useModalStore, {
       modalVisibility: 'isOpen'
     })
+  },
+  methods: {
+    register(values) {
+      console.log(values)
+    }
   }
 }
 </script>
