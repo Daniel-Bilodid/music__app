@@ -2,6 +2,8 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Home from '@/views/AppHome.vue'
 import AppAbout from '@/views/AppAbout.vue'
 import AppManage from '@/views/AppManage.vue'
+import useUserStore from '@/stores/user'
+
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -19,8 +21,16 @@ const router = createRouter({
       name: 'manage',
       // alias: '/manage',
       path: '/manage-music',
-      component: AppManage
+      component: AppManage,
+      beforeEnter: (to, from, next) => {
+        console.log('Manage Route Guard')
+        next()
+      },
+      meta: {
+        requiersAuth: true
+      }
     },
+
     {
       path: '/manage',
       redirect: { name: 'manage' }
@@ -34,11 +44,20 @@ const router = createRouter({
 })
 
 router.beforeEach((to, from, next) => {
-  console.log(to, from)
+  // console.log(to.meta)
 
-  console.log('from global guard')
+  if (!to.meta.requiersAuth) {
+    next()
+    return
+  }
 
-  next()
+  const store = useUserStore()
+
+  if (store.userLoggedIn) {
+    next()
+  } else {
+    next({ name: 'home' })
+  }
 })
 
 export default router
