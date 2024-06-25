@@ -106,8 +106,6 @@ export default {
           }
         )
       })
-
-      console.log(files)
     }
   }
 }
