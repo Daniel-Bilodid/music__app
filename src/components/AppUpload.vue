@@ -107,7 +107,7 @@ export default {
             this.upload[uploadIndex].text_class = 'text-green-400'
           }
         )
-        console.log(file)
+        console.log(file.name)
       })
     },
     cancelUploads() {
