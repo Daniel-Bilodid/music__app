@@ -3,6 +3,7 @@ import Home from '@/views/AppHome.vue'
 import AppAbout from '@/views/AppAbout.vue'
 import AppManage from '@/views/AppManage.vue'
 import useUserStore from '@/stores/user'
+import AppSong from '@/views/AppSong.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -34,6 +35,11 @@ const router = createRouter({
     {
       path: '/manage',
       redirect: { name: 'manage' }
+    },
+    {
+      name: 'song',
+      path: '/song/:id',
+      component: AppSong
     },
     {
       path: '/:catchAll(.*)*',
