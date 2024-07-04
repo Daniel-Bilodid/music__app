@@ -25,7 +25,7 @@
     <div class="bg-white rounded border border-gray-200 relative flex flex-col">
       <div class="px-6 pt-6 pb-5 font-bold border-b border-gray-200">
         <!-- Comment Count -->
-        <span class="card-title">Comments (15)</span>
+        <span class="card-title">Comments {{ this.comment.length }}</span>
         <i class="fa fa-comments float-right text-green-400 text-2xl"></i>
       </div>
       <div class="p-6">
@@ -161,6 +161,9 @@ export default {
 
   watch: {
     sort(newVal) {
+      if (newVal === this.$route.query.sort) {
+        return
+      }
       this.$router.push({
         query: {
           sort: newVal
@@ -176,6 +179,10 @@ export default {
       this.$router.push({ name: 'home' })
       return
     }
+
+    const { sort } = this.$route.query
+
+    this.sort = sort === '1' || sort === '2' ? sort : '1'
 
     this.song = docSnapshot.data()
     this.getComments()
