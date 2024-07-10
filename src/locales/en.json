@@ -1,0 +1,55 @@
+{
+  "home": {
+    "listen": "Listen to Great Music!",
+    "description": "Immerse yourself in a world of melodies and rhythms with our curated selection of great music. Whether you're into classical compositions, chart-topping hits, or discovering new indie sounds, we've got the perfect playlist for every mood. Tune in and let the music transport you to another dimension of pure auditory bliss.",
+    "songs": "Songs"
+  },
+  "song": {
+    "comment_count": "No comments | 1 comment | {count} comments"
+  },
+  "manage": {
+    "my_songs": "My Songs"
+  },
+  "upload": {
+    "upload__song": "Upload",
+    "drop__files": "Drop your files here"
+  },
+  "composition": {
+    "title": "Song Title",
+    "genre": "Genre",
+    "submit": "submit",
+    "back": "Go Back"
+  },
+  "register": {
+    "name": "name",
+    "email": "email",
+    "age": "age",
+    "password": "password",
+    "confirm__password": "Confirm Password",
+    "country": "Country",
+    "countries": {
+      "usa": "USA",
+      "ukraine": "Ukraine",
+      "mexico": "Mexico",
+      "germany": "Germany",
+      "antarctica": "Antarctica"
+    },
+    "who": "Who are you?",
+    "who__options": {
+      "listener": "Listener",
+      "Artist": "Artist"
+    },
+    "accept": "I accept Music's {0}",
+    "tos": "Terms of Service"
+  },
+  "login": {
+    "email": "Email",
+    "password": "Password",
+    "log_in": "Log In"
+  },
+  "auth": {
+    "account": "Your Account",
+    "login": "Login",
+    "register": "Register"
+  }
+}
