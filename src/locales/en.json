@@ -4,6 +4,12 @@
     "description": "Immerse yourself in a world of melodies and rhythms with our curated selection of great music. Whether you're into classical compositions, chart-topping hits, or discovering new indie sounds, we've got the perfect playlist for every mood. Tune in and let the music transport you to another dimension of pure auditory bliss.",
     "songs": "Songs"
   },
+  "header": {
+    "about": "About",
+    "auth": "Loging / Register",
+    "manage": "Manage",
+    "log_out": "Logout"
+  },
   "song": {
     "comment_count": "No comments | 1 comment | {count} comments"
   },
@@ -21,10 +27,10 @@
     "back": "Go Back"
   },
   "register": {
-    "name": "name",
-    "email": "email",
-    "age": "age",
-    "password": "password",
+    "name": "Name",
+    "email": "Email",
+    "age": "Age",
+    "password": "Password",
     "confirm__password": "Confirm Password",
     "country": "Country",
     "countries": {
@@ -37,10 +43,11 @@
     "who": "Who are you?",
     "who__options": {
       "listener": "Listener",
-      "Artist": "Artist"
+      "artist": "Artist"
     },
     "accept": "I accept Music's {0}",
-    "tos": "Terms of Service"
+    "tos": "Terms of Service",
+    "registration": "Register"
   },
   "login": {
     "email": "Email",
