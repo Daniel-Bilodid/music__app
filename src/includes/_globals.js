@@ -15,6 +15,7 @@ export default {
             .replace(/\.\w+$/, '')
         )
       )
+      console.log(path, componentName)
       app.component(`Base${componentName}`, module.default)
     })
   }
