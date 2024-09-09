@@ -4,6 +4,9 @@ import { VitePWA } from 'vite-plugin-pwa'
 import vue from '@vitejs/plugin-vue'
 
 export default defineConfig({
+  test: {
+    global: true
+  },
   plugins: [
     vue(),
     VitePWA({
